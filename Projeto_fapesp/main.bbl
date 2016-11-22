@@ -5,6 +5,13 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
+\bibitem[Altuna 2002]{deadbeat}
+\abntrefinfo{Altuna}{ALTUNA}{2002}
+{ALTUNA, J. A.~T.
+\emph{Análise dinâmica de controladores de corrente para maquinas de
+  indução trifásicas alimentadas por inversor PWM}.
+Tese (Doutorado) --- Universidade Estadual de Campinas, Setembro 2002.}
+
 \bibitem[Amarante et al. 2001]{atlaseolico}
 \abntrefinfo{Amarante et al.}{AMARANTE et al.}{2001}
 {AMARANTE, O. A.~C. do et al.
@@ -17,7 +24,7 @@ Dispon{\'\i}vel em:
 \abntrefinfo{Datta e Ranganathan}{DATTA; RANGANATHAN}{2002}
 {DATTA, R.; RANGANATHAN, V. Variable-speed wind power generation using a doubly
   fed wound rotor induction machine: A comparison with alternative schemes.
-\emph{IEEE Trans. on Energy Conversion}, v.~3, n.~17, p. 414–421, 2002.}
+\emph{IEEE Trans. on Energy Conversion}, n.~17, p. 414–421, 2002.}
 
 \bibitem[Filho 2010]{alfeu}
 \abntrefinfo{Filho}{FILHO}{2010}
@@ -27,6 +34,33 @@ Dispon{\'\i}vel em:
   utilização de controladores baseados no modelo matemático dinâmico do
   gerador}.
 Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
+
+\bibitem[Filho e Filho 2012]{paperalfeu}
+\abntrefinfo{Filho e Filho}{FILHO; FILHO}{2012}
+{FILHO, A. J.~S.; FILHO, E.~R. Model-based predictive control applied to the
+  doubly-fed induction generator direct power control.
+\emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406,
+  2012.}
+
+\bibitem[Harnefors e Nee 1998]{dmcieee}
+\abntrefinfo{Harnefors e Nee}{HARNEFORS; NEE}{1998}
+{HARNEFORS, L.; NEE, H.-P. Model-based current control of ac machines. using
+  the internal model control method.
+\emph{IEEE Transactions on Industry Applications}, n.~37, p. 133–141, 1998.}
+
+\bibitem[Kennel, Linder e Linke 2001]{gpcieee}
+\abntrefinfo{Kennel, Linder e Linke}{KENNEL; LINDER; LINKE}{2001}
+{KENNEL, R.; LINDER, A.; LINKE, M. Generalized predictive control (gpc)-ready
+  for use in drive applications?
+\emph{IEEE 32nd Annual Power Electronics Specialists Conference}, p.
+  1839–1844, 2001.}
+
+\bibitem[Mahmoud et al. 2005]{deadbeatieee}
+\abntrefinfo{Mahmoud et al.}{MAHMOUD et al.}{2005}
+{MAHMOUD, S. et al. A simple high performance current control scheme for
+  induction motor drives.
+\emph{31th Annual Conference of IEEE Industrial Electronics Society}, p.
+  1762–1767, 2005.}
 
 \bibitem[Pinto 2013]{pintofundamentos}
 \abntrefinfo{Pinto}{PINTO}{2013}
@@ -39,6 +73,13 @@ ISBN 9788521621607.}
 {SIMõES, M.~G.; FARRET, F.~A. \emph{Renewable energy systems with induction
   generators}. [S.l.]: CRC Press, 2004.
 ISBN 9780849320316.}
+
+\bibitem[Sousa 2011]{murilodq}
+\abntrefinfo{Sousa}{SOUSA}{2011}
+{SOUSA, M.~H. de.
+\emph{Determinação de parâmetros de máquinas síncronas pelo ensaio de
+  resposta a frequência: Proposta de metodologia com inversor de frequência}.
+Tese (Graduação) --- Universidade de São Paulo, 2011.}
 
 \bibitem[Voltolini 2007]{heliodfig}
 \abntrefinfo{Voltolini}{VOLTOLINI}{2007}
