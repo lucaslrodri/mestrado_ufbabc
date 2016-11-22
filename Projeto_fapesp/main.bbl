@@ -55,6 +55,19 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
 \emph{IEEE 32nd Annual Power Electronics Specialists Conference}, p.
   1839–1844, 2001.}
 
+\bibitem[Lima et al. 2009]{rodrigo11afundamento}
+\abntrefinfo{Lima et al.}{LIMA et al.}{2009}
+{LIMA, F. K.~A. et al. Controle de gerador de indução duplamente alimentado
+  diante de afundamentos de tensão.
+\emph{Eletrônica de Potência}, v.~13, n.~3, p. 189–199, Agosto 2009.}
+
+\bibitem[Lima et al. 2010]{rodrigo10afundamento}
+\abntrefinfo{Lima et al.}{LIMA et al.}{2010}
+{LIMA, F. K.~A. et al. Rotor voltage dynamics in the doubly fed induction
+  generator during grid faults.
+\emph{IEEE Transactions on Power Electronics}, v.~25, n.~1, p. 118–130,
+  Janeiro 2010.}
+
 \bibitem[Mahmoud et al. 2005]{deadbeatieee}
 \abntrefinfo{Mahmoud et al.}{MAHMOUD et al.}{2005}
 {MAHMOUD, S. et al. A simple high performance current control scheme for
@@ -62,11 +75,25 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
 \emph{31th Annual Conference of IEEE Industrial Electronics Society}, p.
   1762–1767, 2005.}
 
+\bibitem[Morren e Haan 2005]{rodrigo8afundamento}
+\abntrefinfo{Morren e Haan}{MORREN; HAAN}{2005}
+{MORREN, J.; HAAN, S. W.~H. de. Ridethrough of wind turbines with doubly-fed
+  induction generator during a voltage dip.
+\emph{IEEE Transactions on Energy Conversion}, v.~20, n.~2, p. 435--441,
+  Setembro 2005.}
+
 \bibitem[Pinto 2013]{pintofundamentos}
 \abntrefinfo{Pinto}{PINTO}{2013}
 {PINTO, M. de O. \emph{Fundamentos da energia eólica}. Rio de Janeiro: LTC,
   2013.
 ISBN 9788521621607.}
+
+\bibitem[Ran et al. 2006]{rodrigo9afundamento}
+\abntrefinfo{Ran et al.}{RAN et al.}{2006}
+{RAN, L. et al. Control of a doubly fed induction generator in a wind turbine
+  during grid fault ride-through.
+\emph{IEEE Transactions on Energy Conversion}, v.~21, n.~3, p. 652--662,
+  Setembro 2006.}
 
 \bibitem[Simões e Farret 2004]{simoesrenewableinduction}
 \abntrefinfo{Simões e Farret}{SIMõES; FARRET}{2004}
