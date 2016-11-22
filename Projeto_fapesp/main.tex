@@ -22,14 +22,20 @@
 	
 	Com o aumento da participação da matriz eólica surgem novos desafios. A velocidade do vento é uma grandeza com grande variação instantânea, podendo variar bastante em questão de horas ou, até mesmo minutos. Essa variação, se não for contornada, pode trazer problemas de qualidade de energia, como a variação da frequência da rede devido a variação do vento, principalmente em redes mais fracas e dependentes da energia eólica. Além disso, há a presença de harmônicos devido ao movimento caótico do vento e ao efeito de sombra, ou seja, a perda de potência no momento em que uma das pás passa pela torre \cite{pintofundamentos}.
 	
-	Uma das soluções para melhorar a qualidade de energia de fontes eólicas é uso da eletrônica de potência em conjunto com topologias alternativas de geradores, como o GIDA (Gerador de indução duplamente alimentado).  A escolha do GIDA ocorre devido ao seu conversor processar até 30\% da potência nominal do gerador, enquanto em outros geradores com conversor acoplado esse valor chega a 100\%. Isto possibilita a redução do custo do conversor
+	Uma das soluções para melhorar a qualidade de energia de fontes eólicas é uso da eletrônica de potência em conjunto com topologias alternativas de geradores, como o GIDA (Gerador de indução duplamente alimentado).  A escolha do GIDA ocorre devido ao seu conversor processar até 30\% da potência nominal do gerador, enquanto em outros geradores com conversor acoplado esse valor chega a 100\%. Isto possibilita a redução do custo do conversor \cite{dattacomparacao,simoesrenewableinduction}. Nessa configuração tanto o estator quanto o rotor estão conectados à rede. Sendo o primeiro conectado diretamente (Figura \ref{figura:gida_esquematico} - A) e o rotor  é conectado através de uma derivação (Figura \ref{figura:gida_esquematico} - C), no qual existe um conversor CA/CA bidirecional \emph{back-to-back} \cite{heliodfig}.
+	
 	
 	\begin{figure}[h]
 		\centering
+		\label{figura:gida_esquematico}
 		\includegraphics[width=1\textwidth]{Figuras/gida_esquematico.png}
 		\caption{Esquema do GIDA conectado à  rede para geração de energia eólica (Próprio autor)}
-		\label{figura:gida_esquematico}
 	\end{figure}
+
+	O conversor back to back é dividido em dois estágios. O primeiro converte a tensão alternada do lado voltado para a rede (Figura \ref{figura:gida_esquematico} - B) em tensão contínua, que é feita através do processo de retificação e com a ajuda de um filtro capacitivo, localizado logo após a saída deste estágio. Já o segundo estágio converte a tensão contínua novamente em tensão alternada, dessa vez aplicada ao rotor (Figura \ref{figura:gida_esquematico} - C). Esse processo é feito através da modulação por largura de pulso (PWM). Ambos os estágios são constituídos por pontes de \emph{Insulated Gate Bipolar Transistor} (IGBT), que são chaves semicondutoras para médias tensões. Dependendo de como as pontes de IGBT são chaveadas é possível regular a saída do conversor para tensões e frequências específicas \cite{alfeu}. 
+	
+	As técnicas de controle vetorial por orientação do fluxo do estator, ou de rotor, ou tensão de estator, permitem controlar separadamente as potências ativas e reativas do GIDA, além das grandezas de tensão e frequência. Essas técnicas consistem em controlar as componentes de eixo direto e em quadratura das correntes do rotor. Inicialmente, utilizavam-se controladores proporcionais-integrais (PI) [ref] para este fim. Mais recentemente, com o avanço dos sistemas computacionais e das técnicas de controle digital, surgiram novas alternativas como o deadbeat [ref], controle preditivo de matriz dinâmica de controle (DMC), controle preditivo baseado em modelo (CPBM) [ref] e controle preditivo generalizado (GPC) [ref]. Todas elas apresentam excelente desempenho, porém a maioria dos trabalhos encontrados na literatura se limitam apenas a simulação. Este trabalho tem o objetivo de preencher a lacuna existente na implementação desses tipos de controladores. Para isso será implementado o controlador MAC aplicado as potências ativas e reativas, proposto por (Referência), no kit de GIDA de um dos laboratório de pós-graduação da UFABC (Nome do laboratório).
+
 	
 	\bibliographystyle{abntex2-alf}
 	\bibliography{biblio}

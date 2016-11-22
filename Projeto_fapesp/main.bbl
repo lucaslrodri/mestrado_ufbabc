@@ -13,10 +13,39 @@ Dispon{\'\i}vel em:
   \url{http://www.cresesb.cepel.br/publicacoes/download/atlas\_eolico/Atlas\%20do\%20Potencial\%20Eolico\%20Brasileiro.pdf}.
   Acesso em: 21 de novembro de 2016.}
 
+\bibitem[Datta e Ranganathan 2002]{dattacomparacao}
+\abntrefinfo{Datta e Ranganathan}{DATTA; RANGANATHAN}{2002}
+{DATTA, R.; RANGANATHAN, V. Variable-speed wind power generation using a doubly
+  fed wound rotor induction machine: A comparison with alternative schemes.
+\emph{IEEE Trans. on Energy Conversion}, v.~3, n.~17, p. 414–421, 2002.}
+
+\bibitem[Filho 2010]{alfeu}
+\abntrefinfo{Filho}{FILHO}{2010}
+{FILHO, A. J.~S.
+\emph{Controle de potências ativa e reativa de geradores de indução
+  trifásicos de rotor bobinado para a aplicação em geração eólica com a
+  utilização de controladores baseados no modelo matemático dinâmico do
+  gerador}.
+Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
+
 \bibitem[Pinto 2013]{pintofundamentos}
 \abntrefinfo{Pinto}{PINTO}{2013}
-{PINTO, M. de O. \emph{Fundamentos da Energia Eólica}. Rio de Janeiro: LTC,
+{PINTO, M. de O. \emph{Fundamentos da energia eólica}. Rio de Janeiro: LTC,
   2013.
 ISBN 9788521621607.}
+
+\bibitem[Simões e Farret 2004]{simoesrenewableinduction}
+\abntrefinfo{Simões e Farret}{SIMõES; FARRET}{2004}
+{SIMõES, M.~G.; FARRET, F.~A. \emph{Renewable energy systems with induction
+  generators}. [S.l.]: CRC Press, 2004.
+ISBN 9780849320316.}
+
+\bibitem[Voltolini 2007]{heliodfig}
+\abntrefinfo{Voltolini}{VOLTOLINI}{2007}
+{VOLTOLINI, H.
+\emph{Modelagem e controle de geradores duplamente alimentados com aplicação
+  em sistemas eólicos}.
+Tese (Doutorado) --- Universidade Federal de Santa Catarina, Florianópolis,
+  Março 2007.}
 
 \end{thebibliography}
