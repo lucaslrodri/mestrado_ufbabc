@@ -1,0 +1,36 @@
+\input{header}
+
+
+\makeindex
+\makeglossary
+
+
+\AtBeginDocument{
+	\pagenumbering{gobble}
+	\frenchspacing 
+	\pretextual
+	\tableofcontents*
+	\textual
+}
+
+\begin{document}
+	\chapter{Introdução}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+	As preocupações devido às emissões de CO2 tornaram a utilização de fontes de energias renováveis interessantes. Dentre elas, a energia baseada no vento se mostrou bastante promissora, pois o Brasil tem um dos maiores potenciais eólicos do mundo \cite{atlaseolico}.
+	
+	Com o aumento da participação da matriz eólica surgem novos desafios. A velocidade do vento é uma grandeza com grande variação instantânea, podendo variar bastante em questão de horas ou, até mesmo minutos. Essa variação, se não for contornada, pode trazer problemas de qualidade de energia, como a variação da frequência da rede devido a variação do vento, principalmente em redes mais fracas e dependentes da energia eólica. Além disso, há a presença de harmônicos devido ao movimento caótico do vento e ao efeito de sombra, ou seja, a perda de potência no momento em que uma das pás passa pela torre \cite{pintofundamentos}.
+	
+	Uma das soluções para melhorar a qualidade de energia de fontes eólicas é uso da eletrônica de potência em conjunto com topologias alternativas de geradores, como o GIDA (Gerador de indução duplamente alimentado).  A escolha do GIDA ocorre devido ao seu conversor processar até 30\% da potência nominal do gerador, enquanto em outros geradores com conversor acoplado esse valor chega a 100\%. Isto possibilita a redução do custo do conversor
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\textwidth]{Figuras/gida_esquematico.png}
+		\caption{Esquema do GIDA conectado à  rede para geração de energia eólica (Próprio autor)}
+		\label{figura:gida_esquematico}
+	\end{figure}
+	
+	\bibliographystyle{abntex2-alf}
+	\bibliography{biblio}
+\end{document}
