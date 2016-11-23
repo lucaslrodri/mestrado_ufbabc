@@ -14,7 +14,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Plano de trabalho e cronograma}}{7}{chapter.6}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase {Metodologia}}{7}{chapter.7}
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase {Metodologia}}{8}{chapter.7}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase {Considera\IeC {\c c}\IeC {\~o}es finais}}{8}{chapter.8}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}

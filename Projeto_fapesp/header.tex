@@ -21,6 +21,7 @@
 \usepackage{textcomp}                              % Símbolos
 \usepackage{makecell}                              % Melhorias em tabelas
 \usepackage{array}                                 % Melhorias em tabelas
+\usepackage{placeins}                              % Conserta o erro das figuras e tabelas flutantes
 
 %Novos comandos
 
@@ -42,10 +43,10 @@
 		\begin{center}
 			\large
 			\begin{tabular}{rl}
-				Orientador: & \imprimirorientador \\
-				Email: & #1 \\
-				Beneficiário: & \imprimirautor \\
-				Email: & #2
+				  \textbf{Orientador:} & \imprimirorientador \\
+				       \textbf{Email:} & #1                  \\
+				\textbf{Beneficiário:} & \imprimirautor      \\
+				       \textbf{Email:} & #2
 			\end{tabular}
 		\end{center}
 		\vspace*{\fill}
