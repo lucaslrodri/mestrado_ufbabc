@@ -18,6 +18,43 @@
 \usepackage{graphicx}                              % Suporte a gráficos e figuras
 \usepackage[alf]{abntex2cite}                      % Citações no padrão ABNT
 \usepackage{mathtools}                             % Equações
+\usepackage{textcomp}                              % Símbolos
+\usepackage{makecell}                              % Melhorias em tabelas
+\usepackage{array}                                 % Melhorias em tabelas
+
+%Novos comandos
+
+\renewcommand{\imprimircapa}[2]{
+	\begin{capa}%
+		\centering
+		\begin{center}
+			\ABNTEXchapterfont\large\textbf{\MakeUppercase\imprimirinstituicao}
+		\end{center}
+		\vfill
+		\begin{center}
+			\ABNTEXchapterfont\bfseries\LARGE\MakeUppercase\imprimirtitulo
+		\end{center}
+		\vspace{2cm}
+		\begin{center}
+			\large\imprimirpreambulo
+		\end{center}
+		\vspace*{2cm}
+		\begin{center}
+			\large
+			\begin{tabular}{rl}
+				Orientador: & \imprimirorientador \\
+				Email: & #1 \\
+				Beneficiário: & \imprimirautor \\
+				Email: & #2
+			\end{tabular}
+		\end{center}
+		\vspace*{\fill}
+		{\large\MakeUppercase\imprimirlocal} \\
+		{\large\MakeUppercase\imprimirdata}
+		\vspace*{1cm}
+	\end{capa}
+}
+
 
 
 % informações do PDF

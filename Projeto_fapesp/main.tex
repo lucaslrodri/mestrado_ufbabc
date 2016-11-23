@@ -1,24 +1,73 @@
 \input{header}
 
-\makeindex
+%%Dados do trabalho (Capa)
 
+\titulo{Estudo e Desenvolvimento de Técnicas de Controle de	Potência para o Gerador de Indução Duplamente Alimentado Aplicado a Sistemas de Geração Eólica}
+
+\instituicao{Universidade Federal do ABC\par
+	Pós-Graduação em Engenharia Elétrica\par
+	PGEE-UFABC
+}
+
+\tipotrabalho{Trabalho Final de Graduação}
+
+\preambulo{Projeto de pesquisa encaminhado à FAPESP para solicitação de bolsa de mestrado}
+
+\local{Santo André}
+
+\data{Novembro de 2016}
+
+\autor{Lucas Lima Rodrigues}
+
+\orientador{Dr. Alfeu J. Sguarezi Filho}
+
+\makeindex
 
 \AtBeginDocument{
 	\pagenumbering{gobble}
 	\frenchspacing 
 	\pretextual
+	\imprimircapa{alfeu.sguarezi@ufabc.edu.br}{lucaslrodri@gmail.com}
 	\tableofcontents*
+	\pdfbookmark[0]{Sumário}{toc}
 	\textual
 	\setlength\afterchapskip{\lineskip}
 }
 
 \begin{document}
+	
 	\begingroup
-	\chapter{Introdução}
+		\chapter{Resumo}
+		\label{capitulo:resumo}
+	\endgroup
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+
+	Este projeto de pesquisa tem como objetivo o estudo de técnicas de controle preditivo baseado em modelo para ao gerador de indução duplamente alimentado aplicado à sistemas de geração eólica. Neste contexto será estudado o modelo matemático dinâmico do gerador, os conversores de potência e as técnicas de controle para o sistema de geração. Para tal objetivo serão realizados estudos através de simulação e implementação prática em uma das bancadas de teste do Laboratório de Eletrônica de Potência e Smart Grids da UFABC.  
+	
+	\begingroup
+		\let\clearpage\relax
+		\chapter{Preâmbulo}
+		\label{capitulo:preambulo}
 	\endgroup
 	
-	\pagenumbering{arabic}
-	\setcounter{page}{1}
+	O trabalho aqui proposto será desenvolvido no âmbito de seu programa de mestrado na pós-graduação em Eng. Elétrica da UFABC.
+	
+	Este trabalho será desenvolvido no Laboratório de Eletrônica de Potência e Smart Grids (LEPS) do Centro de Engenharia, Modelagem e Ciências Sociais Aplicadas (CECS) da UFABC sob coordenação do prof. Alfeu J. Sguarezi Filho. Os trabalhos mais recentes (Últimos quatro anos) ali desenvolvidos e em desenvolvimento envolvem estudos teóricos e práticos consolidados através de montagens experimentais em bancada, tais como:
+	
+	\begin{enumerate}
+		\item Sistema de controle para o gerador de indução gaiola de esquilo - Bolsa de Mestrado FAPESP (Concluído);
+		\item Controle de potências do gerador de indução com rotor bobinado aplicado na geração eólica - Auxílio Regular FAPESP (Concluído) e Edital Universal CNPq (Em andamento);
+		\item Sistemas de controle sem fio para gerador de indução com rotor bobinando aplicado em \emph{smart grids} - Edital Recém doutor da PROPES da UFABC (Concluído);
+		\item  Contrução de protótipo experimental para acionamento de motores de indução -Edital PNPD CAPES (Concluído);
+		\item Controle de sistemas fotovoltaicos e eólicos conectados `a rede elétrica (Em andamento);
+	\end{enumerate}
+	
+	\begingroup
+	\let\clearpage\relax
+	\chapter{Introdução}
+	\label{capitulo:introducao}
+	\endgroup
 	
 	As preocupações devido às emissões de CO2 tornaram a utilização de fontes de energias renováveis interessantes. Dentre elas, a energia baseada no vento se mostrou bastante promissora, pois o Brasil tem um dos maiores potenciais eólicos do mundo \cite{atlaseolico}.
 	
@@ -41,8 +90,9 @@
 	Sendo assim, este projeto de pesquisa tem o objetivo de preencher a lacuna existente na implementação do CPBM aplicado ao controle da potências do GIDA apresentado no trabalho de \citeonline{paperalfeu}. Possivelmente, também serão realizados testes do GIDA operando afundamentos de tensão. O sistema de controle será implementado no Laboratório de Eletrônica de Potência e Smart Grids da UFABC.
 	
 	\begingroup
-	\let\clearpage\relax
-	\chapter{Controle CPBM aplicado potências ativas e reativas do GIDA}
+		\let\clearpage\relax
+		\chapter{Controle CPBM aplicado potências ativas e reativas do GIDA}
+		\label{capitulo:teoria}
 	\endgroup
 	
 	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo de menor valor possível \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo,wangpreditivo}. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Depois disso, é calculada a lei de controle através da minimização da função custo. A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu}. A Figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
@@ -265,7 +315,7 @@
 		\label{figura:gida_preditivo_esquema}
 	\end{figure}
 
-	O algoritmo de controle calcula as tensões de rotor de tal forma que as potências ativas e reativas convirjam para os seus valores de referência. O vetor de tensão desejado no referencial $\alpha\beta r$, $\vec{v}_{2\alpha\beta r}$, gera os sinais de chaveamento para o conversor CC/CA com o emprego de qualquer modulação por vetores espaciais, que é dado por:
+	O algoritmo de controle calcula as tensões de rotor de tal forma que as potências ativas e reativas convirjam para os seus valores de referência. O vetor de tensão desejado no referencial $\alpha\beta r$, $\vec{v}_{2\alpha\beta r}$, gera os sinais de chaveamento para o segundo estágio do conversor CA/CA com o emprego de qualquer modulação por vetores espaciais, que é dado por:
 	\begin{equation}
 		\label{equacao:transformacao_dq_abr}
 		\vec{v}_{2\alpha\beta r} = \vec{v}_{2dq}e^{\delta_s-\delta_r}.
@@ -275,19 +325,86 @@
 		\label{equacao:dif_angulos_fluxo}
 		\delta_s-\delta_r=\int \omega_{sl}dt.
 	\end{equation}
-	Esta é a estratégia de controle que será implementada na prática em uma das bancadas do Laboratório de Eletrônica de Potência e Smart Grids da UFABC.
+	Esta é a estratégia de controle que será implementada na prática em uma das bancadas do LEPS da UFABC. Possivelmente, outras técnicas de controle e operação durante afundamentos de tensão poderão ser estudadas.
 	
 	\begingroup
 		\let\clearpage\relax
 		\chapter{Objetivos do projeto}
+		\label{capitulo:objetivos}
 	\endgroup
 	
-	Este projeto de mestrado tem como objetivo principal implementar o algoritmo controle preditivo baseado em modelo na bancada no Lab. Eletrônica de Potência Smart Grids da UFABC. Outras técnicas de controle e operação durante afundamentos de tensão podem ser estudados durante o projeto.
+	Este projeto de mestrado tem como objetivo principal implementar o algoritmo controle preditivo baseado em modelo na bancada no Lab. Eletrônica de Potência Smart Grids (LEPS) da UFABC. Outras técnicas de controle e operação durante afundamentos de tensão podem ser estudados durante o projeto.
 	
 	Objetivos específicos:
-	
-	
+	\begin{itemize}
+		\item Estudo topologias dos conversores de potência;
+		\item Estudo o modelo dinâmico do gerador duplamente alimentado;
+		\item Estudo as técnicas de controle preditivo, especialmente a baseada em modelo;
+		\item Projeto do CPMB de acordo com os parâmetros do GIDA e do conversor \emph{back-to-back} da bancada no LEPS da UFABC;
+		\item Possivelmente, estudo do controlador operando durante afundamentos de tensão;
+		\item Simulação do controlador preditivo do item anterior no MATLAB;
+		\item Implementação e análise do controlador do item anterior no laboratório.
+	\end{itemize}
 
+	\begingroup
+		\let\clearpage\relax
+		\chapter{Plano de trabalho e cronograma}
+		\label{capitulo:cronograma}
+	\endgroup
+	O plano de trabalho é composto pelas seguintes etapas:
+	\begin{enumerate}
+		\item Estudo da bibliografia relacionada ao GIDA e as técnicas de controle preditivo (6 meses);
+		\item Estudar e simular o modelo dinâmico do GIDA, assim como o controlador aplicado a este gerador (6 meses);
+		\item Implementar o controlador preditivo baseado em modelo no laboratório (11 meses);
+		\item Análise dos resultados e correção de eventuais problemas (3 meses);
+		\item Elaboração do relatório final e da dissertação  de mestrado (6 meses).
+	\end{enumerate}
+	As Tabelas \ref{tabela:plano_trabalho1} e \ref{tabela:plano_trabalho2} apresentam o cronograma de acordo com cada etapa do projeto para o primeiro e segundo ano, respectivamente.
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\diaghead{\theadfont Etapa \ Mês}{Etapa}{Mês} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 \\ \hline\hline
+			                      1                       & x  & x  & x  & x  & x  & x  &    &    &    &    &    &  \\ \hline
+			                      2                       &    &    &    &    & x  & x  & x  & x  & x  & x  &    &  \\ \hline
+			                      3                       &    &    &    &    &    &    &    &    &    & x  & x  & x  \\ \hline
+			                      4                       &    &    &    &    &    &    &    &    &    &    &    &  \\ \hline
+			                      5                       &    &    &    &    &    &    &    &    &    &    &    &  \\ \hline
+		\end{tabular} 
+		\caption{Plano de trabalho e cronograma do primeiro ano (Próprio autor).}
+		\label{tabela:plano_trabalho1}
+	\end{table}
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\diaghead{\theadfont Etapa \ Mês}{Etapa}{Mês} & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline\hline
+			                      1                       &    &    &    &    &    &    &    &    &    &    &    &  \\ \hline
+			                      2                       &    &    &    &    &    &    &    &    &    &    &    &  \\ \hline
+			                      3                       & x  & x  & x  & x  & x  & x  & x  & x  &    &    &    &  \\ \hline
+			                      4                       &    &    &    &    &    &    &    & x  & x  & x  &    &  \\ \hline
+			                      5                       &    &    &    &    &    &    & x  & x  & x  & x  & x  & x  \\ \hline
+		\end{tabular} 
+		\caption{Plano de trabalho e cronograma do segundo ano (Próprio autor).}
+		\label{tabela:plano_trabalho2}
+	\end{table}
+	
+	\begingroup
+		\let\clearpage\relax
+		\chapter{Metodologia}
+		\label{capitulo:metodologia}
+	\endgroup
+
+	A metodologia deste projeto consiste na obtenção de resultados teóricos baseados na modelagem matemática e nas simulações computacionais e compará-los com os resultados obtidos em bancada, através da implementação do mesmo algoritmo no \emph{kit} disponível no Lab. Eletrônica de Potência Smart Grids da UFABC. A bancada é composta por GIDA acoplado em motor de corrente contínua que  será usado para emular o vento, o conversor \emph{back-to-back}, placas de condicionamento de sinais, processador de sinais TMS320F28335, osciloscópio que foram aquisicionados com recursos do projeto financiado pela FAPESP n\textdegree \space2013/05100-3.  Sendo assim, não serão necessários recursos adicionais para a construção da bancada, além da bolsa de mestrado que está sendo solicitada.
+	
+	\begingroup
+		\let\clearpage\relax
+		\chapter{Considerações finais}
+		\label{capitulo:conclusao}
+	\endgroup
+	
+	A proposta deste trabalho visa preencher a lacuna ainda existente em relação aos resultados práticos de controladores preditivos baseados em modelo em geradores de indução duplamente alimentados para sistemas eólicos. Essa linha de pesquisa tem sido de interesse de diversos pesquisadores para melhorar o desempenho dos geradores, torná-los mais robustos a variações e perturbações na rede.  Além de consolidar o tema de pesquisa na formação de pesquisadores e no país.
+	
 	\bibliographystyle{abntex2-alf}
 	\bibliography{biblio}
 \end{document}
