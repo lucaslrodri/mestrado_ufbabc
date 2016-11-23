@@ -38,17 +38,17 @@
 	
 	Devido ao estator do GIDA estar conectado diretamente à rede elétrica a ocorrência de afundamentos de tensão pode danificar os conversores que estão conectados aos enrolamentos do rotor. Inicialmente, a proteção empregada era um banco de resistores que eram ativados quando a falta era detectada \cite{rodrigo8afundamento,rodrigo9afundamento}. Com a evolução das técnicas de controle e modelagem matemática propostas como a apresentada em  \citeonline{rodrigo10afundamento} e \citeonline{rodrigo11afundamento} possibilitaram ao GIDA operar durante o afundamento de tensão com seu conversor operando.
 	
-	Sendo assim, este projeto de pesquisa tem o objetivo de preencher a lacuna existente na implementação do CPBM aplicado ao controle da potências do GIDA apresentado no trabalho de \citeonline{alfeu}. Possivelmente, também serão realizados testes do GIDA operando afundamentos de tensão. O sistema de controle será implementado no Laboratório de Eletrônica de Potência e Smart Grids da UFABC.
+	Sendo assim, este projeto de pesquisa tem o objetivo de preencher a lacuna existente na implementação do CPBM aplicado ao controle da potências do GIDA apresentado no trabalho de \citeonline{paperalfeu}. Possivelmente, também serão realizados testes do GIDA operando afundamentos de tensão. O sistema de controle será implementado no Laboratório de Eletrônica de Potência e Smart Grids da UFABC.
 	
 	\begingroup
 	\let\clearpage\relax
 	\chapter{Controle CPBM aplicado potências ativas e reativas do GIDA}
 	\endgroup
 	
-	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo de menor valor possível \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo}. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Depois disso, é calculada a lei de controle através da minimização da função custo. A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu}. A Figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
+	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo de menor valor possível \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo,wangpreditivo}. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Depois disso, é calculada a lei de controle através da minimização da função custo. A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu}. A Figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Figuras/preditivo_esquematico.png}
+		\includegraphics[width=0.7\textwidth]{Figuras/preditivo_esquematico.png}
 		\caption{Diagrama representativo do sistema de controle preditivo \cite{alfeu}.}
 		\label{figura:preditivo_esquema}
 	\end{figure}
@@ -110,7 +110,7 @@
 		\label{equacao:espaco_estados_continuo}
 		\begin{split}
 			\dot{\bar{x}}=A\bar{x}+B\bar{u}+G\bar{w} \\
-			\bar{y}=C\bar{x}
+			\bar{y}=C\bar{x}.
 		\end{split}
 	\end{equation}
 	Reescrevendo as equações \ref{equacao:gida_reat_R} e \ref{equacao:gida_pot_R} na forma de espaço de estados (\ref{equacao:espaco_estados_continuo}), tem-se:
@@ -138,7 +138,7 @@
 		\begin{bmatrix}
 			0 \\
 			-\omega_{sl}\frac{L_2}{L_mA_m}\lambda_1
-		\end{bmatrix}
+		\end{bmatrix}.
 	\end{equation}
 	Neste caso, as variáveis de estado são as próprias saídas do sistema, ou seja, a matriz C é igual a identidade.
 	
@@ -158,7 +158,7 @@
 			A_d=e^{AT}\cong I+AT \\
 			B_d=\int_0^\tau e^{AT}Bd\tau \cong BT \\
 			G_d=\int_0^\tau e^{AT}Gd\tau \cong GT \\
-			C_d = C
+			C_d = C.
 		\end{split}
 	\end{equation}
 	Substituindo (\ref{equacao:espaco_estados_gida}) em (\ref{equacao:espaco_estados_discreto}) e (\ref{equacao:espaco_estados_discreto_matriz}), tem-se:
@@ -191,16 +191,103 @@
 		\begin{bmatrix}
 			0 \\
 			-\omega_{sl}\frac{L_2}{L_mA_mT}\lambda_1
-		\end{bmatrix}
+		\end{bmatrix}.
 	\end{equation}
 	
 	A predição das saídas a partir do modelo matemático dinâmico da equação discretizada (\ref{equacao:gida_espaco_estados_discreto}) é dada por:
 	\begin{equation}
 		\label{equacao:predicao_saidas}
-		Y=P_{px}\bar{x}(k)+HU+D\bar{\omega}_d(k)
+		Y=P_{px}\bar{x}(k)+HU+D\bar{\omega}_d(k).
 	\end{equation}
 	Onde:
+	\begin{equation}
+		\label{equacao:predicao_Y}
+		Y = 
+		\begin{bmatrix}
+			y(k+1) & y(k+2) & \cdots & y(k+n_y)
+		\end{bmatrix}^T 
+	\end{equation}
+	\begin{equation}
+		\label{equacao:predicao_P}
+		P_{px} = 
+		\begin{bmatrix}
+			C_dA_d & C_dA_d^2 & \cdots & C_dA_d^{n_y}
+		\end{bmatrix}^T
+	\end{equation}
+	\begin{equation}
+		\label{equacao:predicao_U}
+		U = 
+		\begin{bmatrix}
+			u(k) & u(k+1) & \cdots & u(k+n_y-1)
+		\end{bmatrix}^T	
+	\end{equation}
+	\begin{equation}
+		\label{equacao:predicao_H}
+		H = 
+		\begin{bmatrix}
+			C_dB_d            & 0                 & 0                 & \cdots \\
+			C_dA_dB_d         & C_dB_d            & 0                 & \cdots \\
+			C_dA_d^2B_d       & C_dA_dB_d         & C_dB_d            & \cdots \\
+			\vdots            & \vdots            & \vdots            & \ddots \\
+			C_dA_d^{n_y-1}B_d & C_dA_d^{n_y-2}B_d & C_dA_d^{n_y-3}B_d & \cdots
+		\end{bmatrix}
+	\end{equation}
+	\begin{equation}
+		\label{equacao:predicao_D}
+		D = 
+		\begin{bmatrix}
+			C_d            & 0              & 0              & \cdots & 0      \\
+			C_dA_d         & C_d            & 0              & \cdots & 0      \\
+			C_dA_d^2       & C_dA_d         & C_d            & \cdots & 0      \\
+			\vdots         & \vdots         & \vdots         & \ddots & \vdots \\
+			C_dA_d^{n_y-1} & C_dA_d^{n_y-2} & C_dA_D^{n_y-3} & \cdots & C_d
+		\end{bmatrix}
+	\end{equation}
+	e $n_y$ é o horizonte de predição das saídas. 
 	
+	Substituindo as matrizes $A_d$, $B_d$, $G_d$ e $C_d$ (\ref{equacao:espaco_estados_discreto_matriz}) do modelo de espaço de estados do GIDA discretizado (\ref{equacao:gida_espaco_estados_discreto}) nas matrizes $Y$ (\ref{equacao:predicao_Y}), $P_{px}$ (\ref{equacao:predicao_P}), $U$ (\ref{equacao:predicao_U}), $H$ (\ref{equacao:predicao_H}) e $D$ (\ref{equacao:predicao_D}), e utilizando as matrizes resultantes na equação \ref{equacao:predicao_saidas}, obtêm-se as saídas futuras a partir do modelo. O próximo passo é a obtenção da função custo, que pode ser computada através da equação abaixo \cite{alfeucustominimizado,alfeu}:
+	\begin{equation}
+		\label{equacao:funcao_custo}
+		J=(Y-\omega)^TW_y(Y-\omega)+U^TW_uU
+	\end{equation}
+	Sendo que $\omega \in \Re^{(n_y \times q) \times 1}$ representa o vetor de referências futuras da saída a ser controlada, $W_y \in \Re^{(n_y \times q)\times (n_y \times q)}$ é uma matriz definida-positiva que permite enfatizar cada saída controlada. $W_u \in \Re^{n_u \times n_u}$, também uma matriz definida-positiva, pondera o esforço de controle das entrada, $U \in \Re^{n_y \times n_y}$ é o vetor de entradas, $q$ o número de saídas e $n_u$ o horizonte de controle.
+	
+	Substituindo $Y$ de (\ref{equacao:predicao_saidas}) em (\ref{equacao:funcao_custo}) resulta numa função de custo quadrático dependente de $U$. Assim, podemos utilizar a expressão $\frac{\partial J_c}{\partial U} = 0$ para encontrar o valor mínimo e obter a lei de controle:
+	\begin{equation}
+		\label{equacao:lei_controle}
+		U=(H^TW_yH+W_u)^-1H^TW_y(\omega - P_{px}x(k)-D\omega_d(k)).
+	\end{equation}
+	Lembrando que as matrizes $P_px$, $H$ e $D$ devem ser calculadas a cada ciclo de controle, pois dependem do modelo linearizado, que pode mudar entre um ciclo e outro. A Figura \ref{figura:gida_preditivo_esquema} mostra o diagrama de blocos proposto para esta estratégia de controle.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=1\textwidth]{Figuras/gida_esquematico_preditivo.png}
+		\caption{Diagrama de blocos proposto para a estratégia de controle CPBM \cite{paperalfeu}.}
+		\label{figura:gida_preditivo_esquema}
+	\end{figure}
+
+	O algoritmo de controle calcula as tensões de rotor de tal forma que as potências ativas e reativas convirjam para os seus valores de referência. O vetor de tensão desejado no referencial $\alpha\beta r$, $\vec{v}_{2\alpha\beta r}$, gera os sinais de chaveamento para o conversor CC/CA com o emprego de qualquer modulação por vetores espaciais, que é dado por:
+	\begin{equation}
+		\label{equacao:transformacao_dq_abr}
+		\vec{v}_{2\alpha\beta r} = \vec{v}_{2dq}e^{\delta_s-\delta_r}.
+	\end{equation}
+	 $\delta_s-\delta_r$ é a diferença dos ângulos do fluxo de estator e de rotor, que pode ser calculada através da integral abaixo:
+	\begin{equation}
+		\label{equacao:dif_angulos_fluxo}
+		\delta_s-\delta_r=\int \omega_{sl}dt.
+	\end{equation}
+	Esta é a estratégia de controle que será implementada na prática em uma das bancadas do Laboratório de Eletrônica de Potência e Smart Grids da UFABC.
+	
+	\begingroup
+		\let\clearpage\relax
+		\chapter{Objetivos do projeto}
+	\endgroup
+	
+	Este projeto de mestrado tem como objetivo principal implementar o algoritmo controle preditivo baseado em modelo na bancada no Lab. Eletrônica de Potência Smart Grids da UFABC. Outras técnicas de controle e operação durante afundamentos de tensão podem ser estudados durante o projeto.
+	
+	Objetivos específicos:
+	
+	
+
 	\bibliographystyle{abntex2-alf}
 	\bibliography{biblio}
 \end{document}

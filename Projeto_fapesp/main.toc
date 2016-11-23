@@ -6,4 +6,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Controle CPBM aplicado pot\IeC {\^e}ncias ativas e reativas do GIDA}}{2}{chapter.2}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{5}{section*.2}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{7}{section*.2}

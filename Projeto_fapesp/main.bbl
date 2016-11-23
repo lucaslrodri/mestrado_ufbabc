@@ -48,6 +48,12 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
 \emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406,
   2012.}
 
+\bibitem[Filho, Filho e Filho 2011]{alfeucustominimizado}
+\abntrefinfo{Filho, Filho e Filho}{FILHO; FILHO; FILHO}{2011}
+{FILHO, A. J.~S.; FILHO, M.~E. de O.; FILHO, E.~R. A predictive power control
+  for wind energy.
+\emph{IEEE Trans. Sustain. Energy}, v.~2, n.~1, p. 97–105, Janeiro 2011.}
+
 \bibitem[Franklin, Powell e Workman 1994]{franklinpowell}
 \abntrefinfo{Franklin, Powell e Workman}{FRANKLIN; POWELL; WORKMAN}{1994}
 {FRANKLIN, G.~F.; POWELL, J.~D.; WORKMAN, M.~L. \emph{Feedback control of
@@ -143,5 +149,11 @@ Tese (Graduação) --- Universidade de São Paulo, 2011.}
   em sistemas eólicos}.
 Tese (Doutorado) --- Universidade Federal de Santa Catarina, Florianópolis,
   Março 2007.}
+
+\bibitem[Wang 2009]{wangpreditivo}
+\abntrefinfo{Wang}{WANG}{2009}
+{WANG, L. \emph{Model Predictive Control System Design and Implementation Using
+  MATLAB{\textregistered}}. London: Springer, 2009.
+ISBN 9781848823310.}
 
 \end{thebibliography}
