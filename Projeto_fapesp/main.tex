@@ -14,7 +14,9 @@
 }
 
 \begin{document}
+	\begingroup
 	\chapter{Introdução}
+	\endgroup
 	
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
@@ -30,7 +32,7 @@
 		\centering
 		\label{figura:gida_esquematico}
 		\includegraphics[width=1\textwidth]{Figuras/gida_esquematico.png}
-		\caption{Esquema do GIDA conectado à  rede para geração de energia eólica (Próprio autor).}
+		\caption{Esquema do GIDA conectado à rede para geração de energia eólica (Próprio autor).}
 	\end{figure}
 
 	O conversor \emph{back-to-back} é dividido em dois estágios. O primeiro converte a tensão alternada do lado voltado para a rede (Figura \ref{figura:gida_esquematico}-B) em tensão contínua, que é feita através do processo de retificação e com a ajuda de um filtro capacitivo, localizado logo após a saída deste estágio. Já o segundo estágio converte a tensão contínua novamente em tensão alternada, dessa vez aplicada ao rotor (Figura \ref{figura:gida_esquematico}-C). Esse processo é feito através da modulação por largura de pulso (PWM). Ambos os estágios são constituídos por pontes de \emph{Insulated Gate Bipolar Transistor} (IGBT), que são chaves semicondutoras para médias tensões. Dependendo de como as pontes de IGBT são chaveadas é possível regular a saída do conversor para tensões e frequências específicas \cite{alfeu}. 
@@ -44,11 +46,164 @@
 	\begingroup
 	\let\clearpage\relax
 	\chapter{Controle CPBM aplicado potências ativas e reativas do GIDA}
-	 \setlength{\afterchapskip}{-\baselineskip}
 	\endgroup
 	
-	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo. de menor valor possível. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Esta característica antecipativa é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições visto que estas podem ser incorporadas no processo de minimização da função custo. A figura X apresenta um diagrama representativa do sistema de controle preditivo.
+	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo de menor valor possível \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo}. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Depois disso, é calculada a lei de controle através da minimização da função custo. A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu}. A figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
 	
+	\begin{figure}[h]
+		\centering
+		\label{figura:preditivo_esquema}
+		\includegraphics[width=0.5\textwidth]{Figuras/preditivo_esquematico.png}
+		\caption{Diagrama representativo do sistema de controle preditivo \cite{alfeu}.}
+	\end{figure}
+
+	Segundo \citeonline{geradorrefsinceq}, o modelo matemático do GIDA no referencial síncrono $dq$ girando com uma velocidade $\omega_1$ é dado por: 
+	\begin{equation} 
+		\label{equacao:gida_ref_sinc_estator}
+		\vec{v}_{1dq}=R_1\vec{i}_{1dq}+\frac{d\vec{\lambda}_{1dq}}{dt}+j\omega_1\vec{\lambda}_{1dq}
+	\end{equation}
+	\begin{equation}
+		\label{equacao_gida_ref_sinc_rotor}
+		\vec{v}_{2dq}=R_2\vec{i}_{2dq}+\frac{d\vec{\lambda}_{2dq}}{dt}+j(\omega_1-n_p{\omega_{mec}})\vec{\lambda}_{2dq}
+	\end{equation}
+	A relação entre os fluxos concatenados em função das correntes são expressas por:
+	\begin{equation}
+		\label{equacao:gida_fluxo_estator}
+		\vec{\lambda}_{1dq}=L_1\vec{i}_{1dq}+L_M\vec{i}_{2dq}
+	\end{equation}
+	\begin{equation}
+		\label{equacao:gida_fluxo_rotor}
+		\vec{\lambda}_{2dq}=L_M\vec{i}_{1dq}+L_2\vec{i}_{2dq}.
+	\end{equation}
+	e as potências ativas e reativas são dadas por:
+	\begin{equation}
+		\label{equacao:gida_potencia}
+		P=\frac{3}{2}(v_{1d}i_{1d}+v_{1q}i_{1q})
+	\end{equation}
+	\begin{equation}
+		\label{equacao:gida_reativo}
+		Q=\frac{3}{2}(v_{1q}i_{1d}-v_{1d}i_{1q}).
+	\end{equation}
+	
+	Nas equações \ref{equacao:gida_fluxo_estator} à \ref{equacao:gida_reativo} $\vec{v}$, $\vec{i}$ e $\vec{\lambda}$ são os vetores espaciais de tensão, corrente e fluxo magnético, respectivamente. Os subíndices 1 e 2 nas mesmas equações referem-se aos estator e rotor, respectivamente. E ainda, $R$ representa as resistências do estator e rotor por fase, $L$, as indutâncias próprias do estator e do rotor, $L_M$, a indutância mútua, $\omega_1$, a velocidade síncrona, $\omega_{mec}$, a velocidade mecânica e $n_p$, o número de pares de polos da máquina.
+	
+	O CPBM deste trabalho visa o controlar a potência ativa e reativa do estator através da regulação de fluxo do rotor. Ao adotar a orientação segundo o fluxo do estator o eixo direto é alinhado com vetor fluxo de estator, ou seja, $\lambda_{d1}=\lambda_1=|\lambda_{1dq}|$ e $\lambda_{1q}=0$ \cite{paperalfeu}. Utilizando-se deste fato e das equações \ref{equacao:gida_fluxo_estator} e \ref{equacao:gida_fluxo_rotor}, as equações \ref{equacao:gida_potencia} e \ref{equacao:gida_reativo} podem ser reescritas:
+	\begin{equation}
+		\label{equacao:gida_potencia_desacoplamento}
+		P=-\frac{3v_1L_M}{2\sigma L_1L_2}\lambda_{2q}
+	\end{equation}
+	\begin{equation}
+		\label{equacao:gida_reativo_desacoplamento}
+		Q=\frac{3v_1L_M}{2\sigma L_1L_2}(-\lambda_{2d}+\frac{L_2}{L_M}\lambda_1).
+	\end{equation}
+	Onde  $v_1=v_{1q}=|\vec{v}_{1dq}|$ e $\sigma=1-(L_M^2)/(L_1L_2)$.
+	
+	A equação \ref{equacao_gida_ref_sinc_rotor} indica que o fluxo do rotor pode ser controlado através da tensão aplicada ao mesmo. Desprezando a resistência do rotor no cálculo da tensão em (\ref{equacao_gida_ref_sinc_rotor}), as potências ativas (\ref{equacao:gida_potencia_desacoplamento}) e reativas (\ref{equacao:gida_reativo_desacoplamento}) no referencial síncrono são iguais à:
+	\begin{equation}
+		\label{equacao:gida_reat_R}
+		\frac{dQ(t)}{dt}=\frac{v_{d2}(t)}{A_m}+\omega_{sl}P(t)		
+	\end{equation}
+	\begin{equation}
+		\label{equacao:gida_pot_R}
+		\frac{dP(t)}{dt}=\frac{v_{2q}(t)}{A_m}+\omega_{sl}Q(t)-\omega_{s1}\frac{L_2}{L_MA_m}\lambda_1.
+	\end{equation}
+	Onde $\omega_{sl}=\omega_1-n_p\omega_{mec}$ e $A_m=-(2\sigma L_1L_2)/(3v_1L_m)$.
+	
+	Segundo \citeonline{ogata}, um sistema linear continuo no tempo pode ser representado por espaço de estados através da equação \ref{equacao:espaco_estados_continuo}. Onde $A$, $B$, $C$ e $G$ são matrizes $n \times n$, $\bar{x}$, o vetor de variáveis de estado, $\bar{u}$, o vetor de entradas, $\bar{y}$ o vetor de saídas e $\bar{w}$ o vetor de pertubações.
+	\begin{equation}
+		\label{equacao:espaco_estados_continuo}
+		\begin{split}
+			\dot{\bar{x}}=A\bar{x}+B\bar{u}+G\bar{w} \\
+			\bar{y}=C\bar{x}
+		\end{split}
+	\end{equation}
+	Reescrevendo as equações \ref{equacao:gida_reat_R} e \ref{equacao:gida_pot_R} na forma de espaço de estados (\ref{equacao:espaco_estados_continuo}), tem-se:
+	\begin{equation}
+		\label{equacao:espaco_estados_gida}
+		\begin{bmatrix}
+			\dot{Q} \\ \dot{P}
+		\end{bmatrix} =
+		\begin{bmatrix}
+			0            & \omega_{sl} \\
+			-\omega_{sl} & 0
+		\end{bmatrix}
+		\begin{bmatrix}
+			Q \\
+			P
+		\end{bmatrix} + 
+		\begin{bmatrix}
+			\frac{1}{A_m} & 0 \\
+			0 & \frac{1}{A_m}
+		\end{bmatrix} + 
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			0 \\
+			-\omega_{sl}\frac{L_2}{L_mA_m}\lambda_1
+		\end{bmatrix}
+	\end{equation}
+	Neste caso, as variáveis de estado são as próprias saídas do sistema, ou seja, a matriz C é igual a identidade.
+	
+	O sistema em (\ref{equacao:espaco_estados_gida}) não é linear, pois $\omega_{mec}$ varia com o tempo. Entretanto, a constante de tempo mecânica é muito maior que as constantes elétricas. Assim, considerando que o modelo será implementado em um sistema digital, portanto discreto no tempo. Pode-se fazer a linearização, considerando que $\omega_{mec}$ é aproximadamente constante para cada período de amostragem, $\omega_{sl}$ também é constante, visto que, $\omega_1=2\pi f$ é fixado pela frequência da rede, $f=60Hz$. 
+	
+	A discretização de (\ref{equacao:espaco_estados_gida}) em um período de amostragem $T$ através do \emph{zero-order-hold} (ZOH) sem atraso pode ser feita pela equação abaixo \cite{franklinpowell}:
+	\begin{equation}
+		\label{equacao:espaco_estados_discreto}
+		\begin{split}
+			\bar{x}(k+1)=A_d\bar{x}(k)+B_d\bar{u}(k)+G_d\bar{\omega}_d(k)
+		\end{split}
+	\end{equation}
+	Onde:
+	\begin{equation}
+		\label{equacao:espaco_estados_discreto_matriz}
+		\begin{split}
+			A_d=e^{AT}\cong I+AT \\
+			B_d=\int_0^\tau e^{AT}Bd\tau \cong BT \\
+			G_d=\int_0^\tau e^{AT}Gd\tau \cong GT \\
+			C_d = C
+		\end{split}
+	\end{equation}
+	Substituindo (\ref{equacao:espaco_estados_gida}) em (\ref{equacao:espaco_estados_discreto}) e (\ref{equacao:espaco_estados_discreto_matriz}), tem-se:
+	\begin{equation}
+		\label{equacao:gida_espaco_estados_discreto}
+		\begin{bmatrix}
+			Q(k+1) \\
+			P(k+1)
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1             & \omega_{sl}T \\
+			-\omega_{sl}T & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			Q(k) \\
+			P(k)
+		\end{bmatrix} + 
+		\begin{bmatrix}
+			\frac{T}{A_m} & 0 \\
+			0 & \frac{T}{A_m}
+		\end{bmatrix}
+		\begin{bmatrix}
+			v_{2d}(k) \\
+			v_{2q}(k)
+		\end{bmatrix} +
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1 
+		\end{bmatrix} 
+		\begin{bmatrix}
+			0 \\
+			-\omega_{sl}\frac{L_2}{L_mA_mT}\lambda_1
+		\end{bmatrix}
+	\end{equation}
+	
+	A predição das saídas a partir do modelo matemático dinâmico da equação discretizada (\ref{equacao:gida_espaco_estados_discreto}) é dada por:
+	\begin{equation}
+		\label{equacao:predicao_saidas}
+		Y=P_{px}\bar{x}(k)+HU+D\bar{\omega}_d(k)
+	\end{equation}
+	Onde:
 	
 	\bibliographystyle{abntex2-alf}
 	\bibliography{biblio}

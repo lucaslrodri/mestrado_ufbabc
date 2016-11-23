@@ -20,6 +20,12 @@ Dispon{\'\i}vel em:
   \url{http://www.cresesb.cepel.br/publicacoes/download/atlas\_eolico/Atlas\%20do\%20Potencial\%20Eolico\%20Brasileiro.pdf}.
   Acesso em: 21 de novembro de 2016.}
 
+\bibitem[Camacho e Bordons 1998]{camachoteoriapreditivomodelo}
+\abntrefinfo{Camacho e Bordons}{CAMACHO; BORDONS}{1998}
+{CAMACHO, E.~F.; BORDONS, C. \emph{Model predictive control}. London: Springer,
+  1998.  (Advanced Textbooks in Control and Signal Processing).
+ISBN 3540762418.}
+
 \bibitem[Datta e Ranganathan 2002]{dattacomparacao}
 \abntrefinfo{Datta e Ranganathan}{DATTA; RANGANATHAN}{2002}
 {DATTA, R.; RANGANATHAN, V. Variable-speed wind power generation using a doubly
@@ -42,6 +48,11 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
 \emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406,
   2012.}
 
+\bibitem[Franklin, Powell e Workman 1994]{franklinpowell}
+\abntrefinfo{Franklin, Powell e Workman}{FRANKLIN; POWELL; WORKMAN}{1994}
+{FRANKLIN, G.~F.; POWELL, J.~D.; WORKMAN, M.~L. \emph{Feedback control of
+  dynamics systems}. 3. ed. [S.l.]: Addison-Wesley, 1994.}
+
 \bibitem[Harnefors e Nee 1998]{dmcieee}
 \abntrefinfo{Harnefors e Nee}{HARNEFORS; NEE}{1998}
 {HARNEFORS, L.; NEE, H.-P. Model-based current control of ac machines. using
@@ -54,6 +65,11 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
   for use in drive applications?
 \emph{IEEE 32nd Annual Power Electronics Specialists Conference}, p.
   1839–1844, 2001.}
+
+\bibitem[Leonhard 1985]{geradorrefsinceq}
+\abntrefinfo{Leonhard}{LEONHARD}{1985}
+{LEONHARD, W. Control of electrical drives.
+Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.}
 
 \bibitem[Lima et al. 2009]{rodrigo11afundamento}
 \abntrefinfo{Lima et al.}{LIMA et al.}{2009}
@@ -82,6 +98,12 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
 \emph{IEEE Transactions on Energy Conversion}, v.~20, n.~2, p. 435--441,
   Setembro 2005.}
 
+\bibitem[Ogata 2000]{ogata}
+\abntrefinfo{Ogata}{OGATA}{2000}
+{OGATA, K. \emph{Engenharia de controle moderno}. 4. ed. [S.l.]: Pearson
+  Prentice Hall, 2000.
+ISBN 9788587918239.}
+
 \bibitem[Pinto 2013]{pintofundamentos}
 \abntrefinfo{Pinto}{PINTO}{2013}
 {PINTO, M. de O. \emph{Fundamentos da energia eólica}. Rio de Janeiro: LTC,
@@ -94,6 +116,12 @@ ISBN 9788521621607.}
   during grid fault ride-through.
 \emph{IEEE Transactions on Energy Conversion}, v.~21, n.~3, p. 652--662,
   Setembro 2006.}
+
+\bibitem[Rossiter 2003]{rositierteoriapreditivomodelo}
+\abntrefinfo{Rossiter}{ROSSITER}{2003}
+{ROSSITER, J. \emph{Model-Based predictive control: A practical approach}.
+  [S.l.]: CRC Press, 2003.  (Control Series).
+ISBN 9780849312915.}
 
 \bibitem[Simões e Farret 2004]{simoesrenewableinduction}
 \abntrefinfo{Simões e Farret}{SIMõES; FARRET}{2004}
