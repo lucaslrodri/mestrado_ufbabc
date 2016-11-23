@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.7)  23 NOV 2016 19:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.7)  23 NOV 2016 20:03
 entering extended mode
 **./main.tex
 (main.tex
@@ -1432,7 +1432,7 @@ Package pdftex.def Info: Figuras/preditivo_esquematico.png used on input line 9
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./Figuras/preditivo_esquematico.png>] [4]
-<Figuras/gida_esquematico_preditivo.png, id=216, 587.19376pt x 411.03563pt>
+<Figuras/gida_esquematico_preditivo.png, id=217, 587.19376pt x 411.03563pt>
 File: Figuras/gida_esquematico_preditivo.png Graphic file (type png)
 
 <use Figuras/gida_esquematico_preditivo.png>
@@ -1469,13 +1469,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
- 14872 strings out of 493335
- 219791 string characters out of 3139260
- 390080 words of memory out of 3000000
+ 14870 strings out of 493335
+ 219775 string characters out of 3139260
+ 390272 words of memory out of 3000000
  17953 multiletter control sequences out of 15000+200000
- 72611 words of font info for 119 fonts, out of 3000000 for 9000
+ 72575 words of font info for 118 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,29n,38p,999b,605s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,29n,38p,999b,604s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/
 enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
@@ -1494,9 +1494,9 @@ e1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri
  Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/lm/lmsy7.pfb>
-Output written on main.pdf (13 pages, 390050 bytes).
+Output written on main.pdf (13 pages, 390653 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
+ 390 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)
  25704 words of extra memory for PDF output out of 29859 (max. 10000000)
 

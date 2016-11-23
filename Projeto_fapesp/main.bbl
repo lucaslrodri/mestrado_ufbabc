@@ -32,28 +32,6 @@ ISBN 3540762418.}
   fed wound rotor induction machine: A comparison with alternative schemes.
 \emph{IEEE Trans. on Energy Conversion}, n.~17, p. 414–421, 2002.}
 
-\bibitem[Filho 2010]{alfeu}
-\abntrefinfo{Filho}{FILHO}{2010}
-{FILHO, A. J.~S.
-\emph{Controle de potências ativa e reativa de geradores de indução
-  trifásicos de rotor bobinado para a aplicação em geração eólica com a
-  utilização de controladores baseados no modelo matemático dinâmico do
-  gerador}.
-Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
-
-\bibitem[Filho e Filho 2012]{paperalfeu}
-\abntrefinfo{Filho e Filho}{FILHO; FILHO}{2012}
-{FILHO, A. J.~S.; FILHO, E.~R. Model-based predictive control applied to the
-  doubly-fed induction generator direct power control.
-\emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406,
-  2012.}
-
-\bibitem[Filho, Filho e Filho 2011]{alfeucustominimizado}
-\abntrefinfo{Filho, Filho e Filho}{FILHO; FILHO; FILHO}{2011}
-{FILHO, A. J.~S.; FILHO, M.~E. de O.; FILHO, E.~R. A predictive power control
-  for wind energy.
-\emph{IEEE Trans. Sustain. Energy}, v.~2, n.~1, p. 97–105, Janeiro 2011.}
-
 \bibitem[Franklin, Powell e Workman 1994]{franklinpowell}
 \abntrefinfo{Franklin, Powell e Workman}{FRANKLIN; POWELL; WORKMAN}{1994}
 {FRANKLIN, G.~F.; POWELL, J.~D.; WORKMAN, M.~L. \emph{Feedback control of
@@ -128,6 +106,31 @@ ISBN 9788521621607.}
 {ROSSITER, J. \emph{Model-Based predictive control: A practical approach}.
   [S.l.]: CRC Press, 2003.  (Control Series).
 ISBN 9780849312915.}
+
+\bibitem[Sguarezi{ }Filho 2010]{alfeu}
+\abntrefinfo{Sguarezi{ }Filho}{SGUAREZI{ }FILHO}{2010}
+{SGUAREZI{ }FILHO, A.~J.
+\emph{Controle de potências ativa e reativa de geradores de indução
+  trifásicos de rotor bobinado para a aplicação em geração eólica com a
+  utilização de controladores baseados no modelo matemático dinâmico do
+  gerador}.
+Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
+
+\bibitem[Sguarezi{ }Filho, Oliveira{ }Filho e Ruppert{ }Filho
+  2009]{alfeucustominimizado}
+\abntrefinfo{Sguarezi{ }Filho, Oliveira{ }Filho e Ruppert{ }Filho}{SGUAREZI{
+  }FILHO; OLIVEIRA{ }FILHO; RUPPERT{ }FILHO}{2009}
+{SGUAREZI{ }FILHO, A.~J.; OLIVEIRA{ }FILHO, M.~E. de; RUPPERT{ }FILHO, E. A
+  predictive power control for wind energy.
+\emph{IEEE Trans. Sustain. Energy}, v.~13, n.~1, p. 97–105, Janeiro 2009.}
+
+\bibitem[Sguarezi{ }Filho e Ruppert{ }Filho 2012]{paperalfeu}
+\abntrefinfo{Sguarezi{ }Filho e Ruppert{ }Filho}{SGUAREZI{ }FILHO; RUPPERT{
+  }FILHO}{2012}
+{SGUAREZI{ }FILHO, A.~J.; RUPPERT{ }FILHO, E. Model-based predictive control
+  applied to the doubly-fed induction generator direct power control.
+\emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406,
+  2012.}
 
 \bibitem[Simões e Farret 2004]{simoesrenewableinduction}
 \abntrefinfo{Simões e Farret}{SIMõES; FARRET}{2004}
