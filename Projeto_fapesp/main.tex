@@ -1,7 +1,6 @@
 \input{header}
 
 \makeindex
-\makeglossary
 
 
 \AtBeginDocument{
@@ -26,13 +25,11 @@
 	Com o aumento da participação da matriz eólica surgem novos desafios. A velocidade do vento é uma grandeza com grande variação instantânea, podendo variar bastante em questão de horas ou, até mesmo minutos. Essa variação, se não for contornada, pode trazer problemas de qualidade de energia, como a variação da frequência da rede devido a variação do vento, principalmente em redes mais fracas e dependentes da energia eólica. Além disso, há a presença de harmônicos devido ao movimento caótico do vento e ao efeito de sombra, ou seja, a perda de potência no momento em que uma das pás passa pela torre \cite{pintofundamentos}.
 	
 	Uma das soluções para melhorar a qualidade de energia de fontes eólicas é uso da eletrônica de potência em conjunto com topologias alternativas de geradores, como o GIDA (Gerador de indução duplamente alimentado).  A escolha do GIDA ocorre devido ao seu conversor processar até 30\% da potência nominal do gerador, enquanto em outros geradores com conversor acoplado esse valor chega a 100\%. Isto possibilita a redução do custo do conversor \cite{dattacomparacao,simoesrenewableinduction}. Nessa configuração tanto o estator quanto o rotor estão conectados à rede. Sendo o primeiro conectado diretamente (Figura \ref{figura:gida_esquematico}-A) e o rotor  é conectado através de uma derivação (Figura \ref{figura:gida_esquematico}-C), no qual existe um conversor CA/CA bidirecional \emph{back-to-back} \cite{heliodfig}.
-	
-	
 	\begin{figure}[h]
 		\centering
-		\label{figura:gida_esquematico}
 		\includegraphics[width=1\textwidth]{Figuras/gida_esquematico.png}
 		\caption{Esquema do GIDA conectado à rede para geração de energia eólica (Próprio autor).}
+		\label{figura:gida_esquematico}
 	\end{figure}
 
 	O conversor \emph{back-to-back} é dividido em dois estágios. O primeiro converte a tensão alternada do lado voltado para a rede (Figura \ref{figura:gida_esquematico}-B) em tensão contínua, que é feita através do processo de retificação e com a ajuda de um filtro capacitivo, localizado logo após a saída deste estágio. Já o segundo estágio converte a tensão contínua novamente em tensão alternada, dessa vez aplicada ao rotor (Figura \ref{figura:gida_esquematico}-C). Esse processo é feito através da modulação por largura de pulso (PWM). Ambos os estágios são constituídos por pontes de \emph{Insulated Gate Bipolar Transistor} (IGBT), que são chaves semicondutoras para médias tensões. Dependendo de como as pontes de IGBT são chaveadas é possível regular a saída do conversor para tensões e frequências específicas \cite{alfeu}. 
@@ -49,12 +46,11 @@
 	\endgroup
 	
 	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo de menor valor possível \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo}. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Depois disso, é calculada a lei de controle através da minimização da função custo. A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu}. A figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
-	
 	\begin{figure}[h]
 		\centering
-		\label{figura:preditivo_esquema}
 		\includegraphics[width=0.5\textwidth]{Figuras/preditivo_esquematico.png}
 		\caption{Diagrama representativo do sistema de controle preditivo \cite{alfeu}.}
+		\label{figura:preditivo_esquema}
 	\end{figure}
 
 	Segundo \citeonline{geradorrefsinceq}, o modelo matemático do GIDA no referencial síncrono $dq$ girando com uma velocidade $\omega_1$ é dado por: 
