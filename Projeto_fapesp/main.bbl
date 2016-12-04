@@ -10,7 +10,8 @@
 {ALTUNA, J. A.~T.
 \emph{Análise dinâmica de controladores de corrente para maquinas de
   indução trifásicas alimentadas por inversor PWM}.
-Tese (Doutorado) --- Universidade Estadual de Campinas, Setembro 2002.}
+Tese (Doutorado) --- Universidade Estadual de Campinas, Campinas, Setembro
+  2002.}
 
 \bibitem[Amarante et al. 2001]{atlaseolico}
 \abntrefinfo{Amarante et al.}{AMARANTE et al.}{2001}
@@ -30,7 +31,14 @@ ISBN 3540762418.}
 \abntrefinfo{Datta e Ranganathan}{DATTA; RANGANATHAN}{2002}
 {DATTA, R.; RANGANATHAN, V. Variable-speed wind power generation using a doubly
   fed wound rotor induction machine: A comparison with alternative schemes.
-\emph{IEEE Trans. on Energy Conversion}, n.~17, p. 414–421, 2002.}
+\emph{IEEE Trans. on Energy Conversion}, n.~17, p. 414–421, Novembro 2002.}
+
+\bibitem[Franco et al. 2014]{rodrigoquedatensao}
+\abntrefinfo{Franco et al.}{FRANCO et al.}{2014}
+{FRANCO, R. et al. A deadbeat direct power control applied to doubly-fed
+  induction aerogenerator under normal and sag voltages conditions.
+\emph{Industrial Electronics Society, IECON 2014 - 40th Annual Conference of
+  the IEEE}, p. 1906--1911, 2014.}
 
 \bibitem[Franklin, Powell e Workman 1994]{franklinpowell}
 \abntrefinfo{Franklin, Powell e Workman}{FRANKLIN; POWELL; WORKMAN}{1994}
@@ -52,8 +60,8 @@ ISBN 3540762418.}
 
 \bibitem[Leonhard 1985]{geradorrefsinceq}
 \abntrefinfo{Leonhard}{LEONHARD}{1985}
-{LEONHARD, W. Control of electrical drives.
-Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.}
+{LEONHARD, W. \emph{Control of Electrical Drives}. [S.l.]: Springer-Verlag,
+  1985.}
 
 \bibitem[Lima et al. 2009]{rodrigo11afundamento}
 \abntrefinfo{Lima et al.}{LIMA et al.}{2009}
@@ -73,7 +81,7 @@ Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.}
 {MAHMOUD, S. et al. A simple high performance current control scheme for
   induction motor drives.
 \emph{31th Annual Conference of IEEE Industrial Electronics Society}, p.
-  1762–1767, 2005.}
+  1762–1767, Novembro 2005.}
 
 \bibitem[Morren e Haan 2005]{rodrigo8afundamento}
 \abntrefinfo{Morren e Haan}{MORREN; HAAN}{2005}
@@ -87,6 +95,13 @@ Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.}
 {OGATA, K. \emph{Engenharia de controle moderno}. 4. ed. [S.l.]: Pearson
   Prentice Hall, 2000.
 ISBN 9788587918239.}
+
+\bibitem[Pereira 2012]{eixodqmonografia}
+\abntrefinfo{Pereira}{PEREIRA}{2012}
+{PEREIRA, F. R.~F.
+\emph{Estudo sobre as malhas de controle das correntes do motor de indução
+  com orientação de campo}.
+Tese (Graduação) --- Universidade Federal de Viçosa, Viçosa, 2012.}
 
 \bibitem[Pinto 2013]{pintofundamentos}
 \abntrefinfo{Pinto}{PINTO}{2013}
@@ -114,7 +129,8 @@ ISBN 9780849312915.}
   trifásicos de rotor bobinado para a aplicação em geração eólica com a
   utilização de controladores baseados no modelo matemático dinâmico do
   gerador}.
-Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
+Tese (Doutorado) --- Universidade Estadual de Campinas, Campinas, Novembro
+  2010.}
 
 \bibitem[Sguarezi{ }Filho, Oliveira{ }Filho e Ruppert{ }Filho
   2009]{alfeucustominimizado}
@@ -129,7 +145,7 @@ Tese (Doutorado) --- Universidade Estadual de Campinas, Novembro 2010.}
   }FILHO}{2012}
 {SGUAREZI{ }FILHO, A.~J.; RUPPERT{ }FILHO, E. Model-based predictive control
   applied to the doubly-fed induction generator direct power control.
-\emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406,
+\emph{IEEE Transactions on Sustainable Energy}, v.~3, n.~3, p. 398–406, Julho
   2012.}
 
 \bibitem[Simões e Farret 2004]{simoesrenewableinduction}
@@ -143,7 +159,7 @@ ISBN 9780849320316.}
 {SOUSA, M.~H. de.
 \emph{Determinação de parâmetros de máquinas síncronas pelo ensaio de
   resposta a frequência: Proposta de metodologia com inversor de frequência}.
-Tese (Graduação) --- Universidade de São Paulo, 2011.}
+Tese (Graduação) --- Universidade de São Paulo, São Paulo, 2011.}
 
 \bibitem[Voltolini 2007]{heliodfig}
 \abntrefinfo{Voltolini}{VOLTOLINI}{2007}

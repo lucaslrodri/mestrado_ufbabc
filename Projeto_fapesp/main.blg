@@ -2,10 +2,14 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: abntex2-alf.bst
 Database file #1: abntex2-options.bib
 Database file #2: biblio.bib
+I was expecting an "="---line 181 of file biblio.bib
+ :  address 
+ :          {Campinas}
+I'm skipping whatever remains of this entry
 Warning--campo title vazio em atlaseolico
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.6           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-(There was 1 warning)
+(There was 1 error message)
