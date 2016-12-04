@@ -63,6 +63,12 @@ ISBN 3540762418.}
 {LEONHARD, W. \emph{Control of Electrical Drives}. [S.l.]: Springer-Verlag,
   1985.}
 
+\bibitem[Löfberg]{historicopreditivo}
+\abntrefinfo{Löfberg}{LöFBERG}{}
+{LöFBERG, J.
+\emph{Minimax approaches to robust model predictive control}.
+Tese (Doutorado) --- Linköping University, Linköping.}
+
 \bibitem[Lima et al. 2009]{rodrigo11afundamento}
 \abntrefinfo{Lima et al.}{LIMA et al.}{2009}
 {LIMA, F. K.~A. et al. Controle de gerador de indução duplamente alimentado
@@ -75,6 +81,11 @@ ISBN 3540762418.}
   generator during grid faults.
 \emph{IEEE Transactions on Power Electronics}, v.~25, n.~1, p. 118–130,
   Janeiro 2010.}
+
+\bibitem[Maciejowski 2002]{preditivorestricoes}
+\abntrefinfo{Maciejowski}{MACIEJOWSKI}{2002}
+{MACIEJOWSKI, J.~M. \emph{Predictive Control with Constraints}. London:
+  Prentice Hall, 2002.}
 
 \bibitem[Mahmoud et al. 2005]{deadbeatieee}
 \abntrefinfo{Mahmoud et al.}{MAHMOUD et al.}{2005}
@@ -160,6 +171,13 @@ ISBN 9780849320316.}
 \emph{Determinação de parâmetros de máquinas síncronas pelo ensaio de
   resposta a frequência: Proposta de metodologia com inversor de frequência}.
 Tese (Graduação) --- Universidade de São Paulo, São Paulo, 2011.}
+
+\bibitem[Souza 2015]{estevaopreditivo}
+\abntrefinfo{Souza}{SOUZA}{2015}
+{SOUZA, E.~M. de.
+\emph{Controle preditivo robusto baseado em modelo aplicado a sistemas
+  não-lineares incertos linearizados por realimentação de estados}.
+Disserta\c{c}\~{a}o (Mestrado) --- Universidade Federal de Minas Gerais, 2015.}
 
 \bibitem[Voltolini 2007]{heliodfig}
 \abntrefinfo{Voltolini}{VOLTOLINI}{2007}

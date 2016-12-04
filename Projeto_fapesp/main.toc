@@ -8,11 +8,11 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Controle CPBM aplicado pot\IeC {\^e}ncias ativas e reativas do GIDA}}{2}{chapter.3}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Objetivos do projeto}}{6}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Objetivos do projeto}}{7}{chapter.4}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Plano de trabalho e cronograma}}{7}{chapter.5}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Metodologia}}{7}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Metodologia}}{8}{chapter.6}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase {Considera\IeC {\c c}\IeC {\~o}es finais}}{8}{chapter.7}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}

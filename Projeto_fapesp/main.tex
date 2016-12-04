@@ -91,8 +91,18 @@
 		\label{capitulo:teoria}
 	\endgroup
 	
-	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo minimizada \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo,wangpreditivo}. No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras. Depois disso, é calculada a lei de controle através da minimização da função custo. A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições, visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu}. A Figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
-	\begin{figure}[h]
+	Os controladores preditivos levam em consideração o comportamento futuro do sistema, comparando a saída com a referência e encontrando uma função custo minimizada \cite{camachoteoriapreditivomodelo,rositierteoriapreditivomodelo,wangpreditivo}. Foram desenvolvidos na década de 70, mas somente ganhou força nos anos 90, ao utilizar a representação em espaço de estados em vez da função de transferência \cite{historicopreditivo}.
+	
+	No CPBM é utilizado o modelo matemático do gerador de indução duplamente alimentado para fazer a predição das saídas futuras sobre um horizonte de tempo finito. Depois disso, é calculada a lei de controle através da minimização da função custo. A função custo empregada nessa tese leva em consideração o erro quadrático, de modo que, ao ser minimizada, a trajetória do sistema segue para uma referência predefinida \cite{estevaopreditivo}. A Equação da função custo é representada por (\ref{equacao:funcao_quadratica}). Onde $n_1$ e $n_y$ é o horizonte inicial e final das saídas, respectivamente, $n_u$, o horizonte de controle,  $\omega_{ui}$, a ponderação no sinal de controle, $x_i$, a predição das saídas $i$ passos adiante, $r_i$, as referências futuras e $\delta u_i$ a variação no sinal de controle \cite{alfeu}.
+	
+	\begin{equation} 
+	\label{equacao:funcao_quadratica}
+	J_c  = \sum_{i=n_1}^{n_y}(r_i-x_i)^2+\sum_{i=1}^{n_u}\omega_{ui}\Delta u_i^2
+	\end{equation}
+	
+	A característica antecipativa do controle preditivo é desejável em sistemas onde há a mudança rápida de referência. Além disso, é possível lidar explicitamente com as restrições, visto que estas podem ser incorporadas no processo de minimização da função custo \cite{alfeu,preditivorestricoes}. A Figura \ref{figura:preditivo_esquema} apresenta um diagrama representativo do sistema de controle preditivo.
+	
+	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.7\textwidth]{Figuras/preditivo_esquematico.png}
 		\caption{Diagrama representativo do sistema de controle preditivo \cite{alfeu}.}
@@ -127,9 +137,9 @@
 		Q=\frac{3}{2}(v_{1q}i_{1d}-v_{1d}i_{1q}).
 	\end{equation}
 	
-	Nas equações \ref{equacao:gida_fluxo_estator} à \ref{equacao:gida_reativo} $\vec{v}$, $\vec{i}$ e $\vec{\lambda}$ são os vetores espaciais de tensão, corrente e fluxo magnético, respectivamente. Os subíndices 1 e 2 nas mesmas equações referem-se aos estator e rotor, respectivamente. E ainda, $R$ representa as resistências do estator e rotor por fase, $L$, as indutâncias próprias do estator e do rotor, $L_M$, a indutância mútua, $\omega_1$, a velocidade síncrona, $\omega_{mec}$, a velocidade mecânica e $n_p$, o número de pares de polos da máquina.
+	Nas equações (\ref{equacao:gida_fluxo_estator}) à (\ref{equacao:gida_reativo}) $\vec{v}$, $\vec{i}$ e $\vec{\lambda}$ são os vetores espaciais de tensão, corrente e fluxo magnético, respectivamente. Os subíndices 1 e 2 nas mesmas Equações referem-se aos estator e rotor, respectivamente. E ainda, $R$ representa as resistências do estator e rotor por fase, $L$, as indutâncias próprias do estator e do rotor, $L_M$, a indutância mútua, $\omega_1$, a velocidade síncrona, $\omega_{mec}$, a velocidade mecânica e $n_p$, o número de pares de polos da máquina.
 	
-	O CPBM deste trabalho visa o controlar a potência ativa e reativa do estator através da regulação de fluxo do rotor. Ao adotar a orientação segundo o fluxo do estator o eixo direto é alinhado com vetor fluxo de estator, ou seja, $\lambda_{d1}=\lambda_1=|\lambda_{1dq}|$ e $\lambda_{1q}=0$ \cite{paperalfeu}. Utilizando-se deste fato e das equações \ref{equacao:gida_fluxo_estator} e \ref{equacao:gida_fluxo_rotor}, as equações \ref{equacao:gida_potencia} e \ref{equacao:gida_reativo} podem ser reescritas:
+	O CPBM deste trabalho visa o controlar a potência ativa e reativa do estator através da regulação de fluxo do rotor. Ao adotar a orientação segundo o fluxo do estator o eixo direto é alinhado com vetor fluxo de estator, ou seja, $\lambda_{d1}=\lambda_1=|\lambda_{1dq}|$ e $\lambda_{1q}=0$ \cite{paperalfeu}. Utilizando-se deste fato e das Equações (\ref{equacao:gida_fluxo_estator}) e (\ref{equacao:gida_fluxo_rotor}), as equações (\ref{equacao:gida_potencia}) e (\ref{equacao:gida_reativo}) podem ser reescritas:
 	\begin{equation}
 		\label{equacao:gida_potencia_desacoplamento}
 		P=-\frac{3v_1L_M}{2\sigma L_1L_2}\lambda_{2q}
@@ -140,7 +150,7 @@
 	\end{equation}
 	Onde  $v_1=v_{1q}=|\vec{v}_{1dq}|$ e $\sigma=1-(L_M^2)/(L_1L_2)$.
 	
-	A equação \ref{equacao_gida_ref_sinc_rotor} indica que o fluxo do rotor pode ser controlado através da tensão aplicada ao mesmo. Desprezando a resistência do rotor no cálculo da tensão em (\ref{equacao_gida_ref_sinc_rotor}), as potências ativas (\ref{equacao:gida_potencia_desacoplamento}) e reativas (\ref{equacao:gida_reativo_desacoplamento}) no referencial síncrono são iguais à:
+	A equação (\ref{equacao_gida_ref_sinc_rotor}) indica que o fluxo do rotor pode ser controlado através da tensão aplicada ao mesmo. Desprezando a resistência do rotor no cálculo da tensão em (\ref{equacao_gida_ref_sinc_rotor}), as potências ativas (\ref{equacao:gida_potencia_desacoplamento}) e reativas (\ref{equacao:gida_reativo_desacoplamento}) no referencial síncrono são iguais à:
 	\begin{equation}
 		\label{equacao:gida_reat_R}
 		\frac{dQ(t)}{dt}=\frac{v_{d2}(t)}{A_m}+\omega_{sl}P(t)		
@@ -151,7 +161,7 @@
 	\end{equation}
 	Onde $\omega_{sl}=\omega_1-n_p\omega_{mec}$ e $A_m=-(2\sigma L_1L_2)/(3v_1L_m)$.
 	
-	Segundo \citeonline{ogata}, um sistema linear continuo no tempo pode ser representado por espaço de estados através da equação \ref{equacao:espaco_estados_continuo}. Onde $A$, $B$, $C$ e $G$ são matrizes $n \times n$, $\bar{x}$, o vetor de variáveis de estado, $\bar{u}$, o vetor de entradas, $\bar{y}$ o vetor de saídas e $\bar{w}$ o vetor de pertubações.
+	Segundo \citeonline{ogata}, um sistema linear continuo no tempo pode ser representado por espaço de estados através da equação (\ref{equacao:espaco_estados_continuo}). Onde $A$, $B$, $C$ e $G$ são matrizes $n \times n$, $\bar{x}$, o vetor de variáveis de estado, $\bar{u}$, o vetor de entradas, $\bar{y}$ o vetor de saídas e $\bar{w}$ o vetor de pertubações.
 	\begin{equation}
 		\label{equacao:espaco_estados_continuo}
 		\begin{split}
@@ -159,7 +169,7 @@
 			\bar{y}=C\bar{x}.
 		\end{split}
 	\end{equation}
-	Reescrevendo as equações \ref{equacao:gida_reat_R} e \ref{equacao:gida_pot_R} na forma de espaço de estados (\ref{equacao:espaco_estados_continuo}), tem-se:
+	Reescrevendo as equações (\ref{equacao:gida_reat_R}) e (\ref{equacao:gida_pot_R}) na forma de espaço de estados (\ref{equacao:espaco_estados_continuo}), tem-se:
 	\begin{equation}
 		\label{equacao:espaco_estados_gida}
 		\begin{bmatrix}
@@ -291,14 +301,14 @@
 	\end{equation}
 	e $n_y$ é o horizonte de predição das saídas. 
 	
-	Substituindo as matrizes $A_d$, $B_d$, $G_d$ e $C_d$ (\ref{equacao:espaco_estados_discreto_matriz}) do modelo de espaço de estados do GIDA discretizado (\ref{equacao:gida_espaco_estados_discreto}) nas matrizes $Y$ (\ref{equacao:predicao_Y}), $P_{px}$ (\ref{equacao:predicao_P}), $U$ (\ref{equacao:predicao_U}), $H$ (\ref{equacao:predicao_H}) e $D$ (\ref{equacao:predicao_D}), e utilizando as matrizes resultantes na equação \ref{equacao:predicao_saidas}, obtêm-se as saídas futuras a partir do modelo. O próximo passo é a obtenção da função custo, que pode ser computada através da equação abaixo \cite{alfeucustominimizado,alfeu}:
+	Substituindo as matrizes $A_d$, $B_d$, $G_d$ e $C_d$ (\ref{equacao:espaco_estados_discreto_matriz}) do modelo de espaço de estados do GIDA discretizado (\ref{equacao:gida_espaco_estados_discreto}) nas matrizes $Y$ (\ref{equacao:predicao_Y}), $P_{px}$ (\ref{equacao:predicao_P}), $U$ (\ref{equacao:predicao_U}), $H$ (\ref{equacao:predicao_H}) e $D$ (\ref{equacao:predicao_D}), e utilizando as matrizes resultantes na equação (\ref{equacao:predicao_saidas}), obtêm-se as saídas futuras a partir do modelo. O próximo passo é a obtenção da função custo, que pode ser computada através da equação abaixo \cite{alfeucustominimizado,alfeu}:
 	\begin{equation}
 		\label{equacao:funcao_custo}
 		J=(Y-\omega)^TW_y(Y-\omega)+U^TW_uU
 	\end{equation}
 	Sendo que $\omega \in \Re^{(n_y \times q) \times 1}$ representa o vetor de referências futuras da saída a ser controlada, $W_y \in \Re^{(n_y \times q)\times (n_y \times q)}$ é uma matriz definida-positiva que permite enfatizar cada saída controlada. $W_u \in \Re^{n_u \times n_u}$, também uma matriz definida-positiva, pondera o esforço de controle das entrada, $U \in \Re^{n_y \times n_y}$ é o vetor de entradas, $q$ o número de saídas e $n_u$ o horizonte de controle.
 	
-	Substituindo $Y$ de (\ref{equacao:predicao_saidas}) em (\ref{equacao:funcao_custo}) resulta numa função de custo quadrático dependente de $U$. Assim, podemos utilizar a expressão $\frac{\partial J_c}{\partial U} = 0$ para encontrar o valor mínimo e obter a lei de controle:
+	Substituindo $Y$ de (\ref{equacao:predicao_saidas}) em (\ref{equacao:funcao_custo}) resulta numa função de custo quadrático (\ref{equacao:funcao_quadratica}) dependente de $U$. Assim, podemos utilizar a expressão $\frac{\partial J_c}{\partial U} = 0$ para encontrar o valor mínimo e obter a lei de controle:
 	\begin{equation}
 		\label{equacao:lei_controle}
 		U=(H^TW_yH+W_u)^-1H^TW_y(\omega - P_{px}x(k)-D\omega_d(k)).

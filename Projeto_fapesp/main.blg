@@ -6,10 +6,19 @@ I was expecting an "="---line 181 of file biblio.bib
  :  address 
  :          {Campinas}
 I'm skipping whatever remains of this entry
+I was expecting an "="---line 189 of file biblio.bib
+ :  address 
+ :          {Belo Horizonte}
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 197 of file biblio.bib
+ :  year 
+ :       {2003}
+I'm skipping whatever remains of this entry
 Warning--campo title vazio em atlaseolico
+Warning--campo year vazio em historicopreditivo
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.6           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-(There was 1 error message)
+(There were 3 error messages)

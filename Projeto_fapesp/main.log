@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.7)  3 DEC 2016 23:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.7)  4 DEC 2016 12:19
 entering extended mode
 **./main.tex
 (main.tex
@@ -1420,32 +1420,31 @@ Package pdftex.def Info: Figuras/gida_esquematico.png used on input line 75.
  [1
 
  <./Figuras/gida_esquematico.png>]
-<Figuras/preditivo_esquematico.png, id=113, 438.13687pt x 325.96782pt>
+
+Package hyperref Warning: Suppressing empty link on input line 94.
+
+[2] <Figuras/preditivo_esquematico.png, id=150, 438.13687pt x 325.96782pt>
 File: Figuras/preditivo_esquematico.png Graphic file (type png)
 
 <use Figuras/preditivo_esquematico.png>
-Package pdftex.def Info: Figuras/preditivo_esquematico.png used on input line 9
-7.
+Package pdftex.def Info: Figuras/preditivo_esquematico.png used on input line 1
+07.
 (pdftex.def)             Requested size: 318.49861pt x 236.95975pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] [3 <./Figuras/preditivo_esquematico.png>] [4]
-<Figuras/gida_esquematico_preditivo.png, id=221, 587.19376pt x 411.03563pt>
+ [3 <./Figuras/preditivo_esquematico.png>] [4] [5]
+<Figuras/gida_esquematico_preditivo.png, id=248, 587.19376pt x 411.03563pt>
 File: Figuras/gida_esquematico_preditivo.png Graphic file (type png)
 
 <use Figuras/gida_esquematico_preditivo.png>
 Package pdftex.def Info: Figuras/gida_esquematico_preditivo.png used on input l
-ine 309.
+ine 319.
 (pdftex.def)             Requested size: 455.0pt x 318.49915pt.
- [5]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 336.
+ [6 <./Figuras/gida_esquematico_preditivo.png>]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 346.
 
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [6 <./Figuras/gida_esquematico_preditivo.png>] [7] (main.bbl [8]
+) [7]
+(main.bbl [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1457,29 +1456,29 @@ bibitemlist
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 406.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 416.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 416.
  ) 
 Here is how much of TeX's memory you used:
- 14884 strings out of 493335
- 220081 string characters out of 3139260
- 390629 words of memory out of 3000000
- 17963 multiletter control sequences out of 15000+200000
- 72658 words of font info for 119 fonts, out of 3000000 for 9000
+ 14910 strings out of 493335
+ 220631 string characters out of 3139260
+ 392212 words of memory out of 3000000
+ 17979 multiletter control sequences out of 15000+200000
+ 72907 words of font info for 122 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,29n,38p,969b,604s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,29n,38p,969b,602s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/
-enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
-t.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program
+enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathe
+x.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program
  Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/latxfont/line10.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
@@ -1494,9 +1493,9 @@ e1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri
  Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/lm/lmsy7.pfb>
-Output written on main.pdf (13 pages, 392493 bytes).
+Output written on main.pdf (13 pages, 397025 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
+ 408 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
  25704 words of extra memory for PDF output out of 29859 (max. 10000000)
 
